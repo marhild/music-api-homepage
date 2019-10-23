@@ -1,9 +1,14 @@
 :root{
   --primary-color: #333;
-  --secondary-color: rgb(34, 218, 156);
+  --secondary-color: rgb(33, 192, 192);
   --overlay-color: rgba(0,0,0, 0.7);
+  --background-gray:rgb(50, 53, 53);
+  --background-gray-blue: rgb(205, 214, 214);
 }
 
+/*****************************/
+/*********BASIC**************/
+/***************************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,8 +41,11 @@ ul{
   padding: 0 2rem;
 }
 
+/*****************************/
+/*********HEADER*************/
+/***************************/
 .header{
-  height: 600px;
+  height: 500px;
   background: url('/img/header.jpg');
   background-size:cover;
   background-repeat: no-repeat;
@@ -47,9 +55,11 @@ ul{
   display: flex;
 }
 
+/*****************************/
+/*****Input with Icon********/
+/***************************/
 .input-icon-wrap {
   border: 5px solid #eee; 
-  border-radius: 25px;
   display: flex;
   border-radius: 30px;
   background: #eee;
@@ -83,10 +93,12 @@ ul{
   font-size: 20px;
 }
 
-/* Section a*/
+/*****************************/
+/******SECTION A*************/
+/***************************/
 
 .section-a {
-  margin: 2rem 6rem;
+  margin: 2rem 4rem;
 }
 
 .container-icons{
@@ -109,15 +121,21 @@ ul{
 }
 .genre-title{
   font-weight: 600;
+  font-size: 14px;
 }
 
 .genre-icon{
   text-align: center;
 }
 
-/* section b*/
+/*****************************/
+/******SECTION B*************/
+/***************************/
 .section-b {
-  margin: 2rem 0;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  padding: 3rem;
+  background: var(--background-gray-blue);
 }
 
 .container-gallery{
@@ -127,16 +145,21 @@ ul{
 }
 
 .card {
-  background: rgb(50, 53, 53);
+  background: var(--background-gray);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.3);
   transition: 0.3s ease;
   color: rgb(248, 242, 242);
-  margin: 20px;
+  margin: 1rem;
 }
+
+.card:hover{
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.6);
+}
+
 
 .card-body{
   padding: 5px 10px 10px 10px;
@@ -193,23 +216,64 @@ ul{
   text-align: center;
   font-weight: 600;
 }
-/*section-d*/
 
-.bottom-img{
-  height: 250px;
-  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(31, 43, 43, 0.685)), url('/img/bottom.jpg');
-  background-position: bottom center;
-  background-size: cover;
-  background-repeat: no-repeat;
+/***************************/
+/******PAGINATION**********/
+/*************************/
+
+.container-pagination{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/*footer*/
+.pagination{
+  margin-top: 1rem;
+}
+
+.pagination li{
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.page{
+  width: 30px;
+  background:  var(--background-gray);
+  border: 3px solid  var(--background-gray);
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 600;
+  color: rgb(241, 232, 232);
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.3);
+}
+.pagination .fas {
+  font-size: 25px;
+  color:  var(--background-gray);
+
+}
+
+.pagination .fas:hover {
+  font-size: 25px;
+  color:  var(--secondary-color);
+}
+
+.page:hover{
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.5);
+}
+
+
+/*****************************/
+/******FOOTER****************/
+/***************************/
+
 .section-footer {
   background: var(--primary-color);
   color: #fff;
   padding: 4rem 0;
 }
-
 
 .section-footer .container {
   display: grid;
@@ -237,7 +301,205 @@ ul{
 }
 
 
+/**************************************/
+/******MEDIA max-width 800px**********/
+/************************************/
+
+@media (max-width: 800px) {
+
+  .section-a {
+    margin: 1rem 4rem;
+  }
+  .header{
+    height: 350px;
+  }
+  
+  .genre-icon .fas{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .section-b {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 2rem;
+  }
+
+  .card {
+    margin: 0.5rem;
+  }
+
+  .card img{
+    width: 150px;
+  }
+  
+  .overlayFade {
+    height: 150px;
+    width: 100%;
+  }
+
+  .text {
+    font-size: 14px;
+    width: 110px;
+  }
+
+  .card-body{
+    padding: 5px;
+    text-align: center;
+  }
+  .music-title{
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .music-artist, .music-info{
+    font-size: 12px;
+  }
+
+  .section-footer {
+    padding: 3rem 0;
+  }
+}
 
 
+/**************************************/
+/******MEDIA max-width 450px**********/
+/************************************/
 
+@media (max-width: 450px) {
 
+  .section-a {
+    margin: 1rem 2rem;
+  }
+  .header{
+    height: 300px;
+  }
+  
+  
+  .genre-icon .fas{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .section-b {
+    padding: 1.5rem;
+  }
+
+  .card {
+    margin: 0.5rem;
+  }
+
+  .card img{
+    width: 130px;
+  }
+  
+  .overlayFade {
+    height: 130px;
+    width: 100%;
+  }
+
+  .section-footer {
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .section-footer h2{
+    font-size: 18px;
+  }
+
+  .section-footer h3{
+    font-size: 14px;
+  }
+
+  .section-footer .fab{
+    font-size: 20px;
+  }
+  .section-footer ul{
+    line-height: 0.5;
+  }
+
+  .section-footer a{
+    font-size: 10px;
+  }
+  .section-footer .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+/**************************************/
+/******MEDIA max-width 375px**********/
+/************************************/
+
+@media (max-width: 375px) {
+
+  .section-a {
+    margin: 1rem 1rem;
+  }
+  .header{
+    height: 250px;
+  }
+  
+
+  .genre-icon .fas{
+    font-size: 20px;
+  }
+
+  .section-b {
+    padding: 1rem;
+  }
+
+  .card img{
+    width: 120px;
+  }
+  
+  .overlayFade {
+    height: 120px;
+    width: 100%;
+  }
+
+  .section-footer {
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .section-footer h2{
+    font-size: 18px;
+  }
+
+  .section-footer h3{
+    font-size: 14px;
+  }
+
+  .section-footer .fab{
+    font-size: 20px;
+  }
+  .section-footer ul{
+    line-height: 0.5;
+  }
+
+  .section-footer a{
+    font-size: 10px;
+  }
+  .section-footer .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .input-icon-wrap {
+    width: 20rem;
+  }
+  
+  .input-with-icon {
+    width: 15rem;
+  }
+
+  
+  .input-icon, .input-with-icon {
+    font-size: 15px;
+  }
+  
+  .input-icon{
+    font-size: 18px;
+  }
+  
+}
